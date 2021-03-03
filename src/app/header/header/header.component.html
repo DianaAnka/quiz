@@ -1,0 +1,17 @@
+<mat-toolbar class="main-header" color="primary">
+  <div class="search-bar" fxFlex>
+    <form class="search-form">
+      <mat-icon>search</mat-icon>
+      <input type="text" placeholder="Search" autofocus="true" [(ngModel)]="searchInput" name="userSearch"
+        (keyup.enter)="searchId()" />
+    </form>
+  </div>
+  <article>
+    <ul>
+      <li *ngFor="let id of
+                  ids | search: searchInput">
+        {{id.value}}
+      </li>
+    </ul>
+  </article>
+</mat-toolbar>
